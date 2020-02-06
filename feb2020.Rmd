@@ -1,18 +1,247 @@
 ---
-title: "Feb 2020"
-author: "Sky Onosson"
-date: "04/02/2020"
-output: html_document
+title: "Coding Discussion Group"
+author: "Coordinator: Sky Onosson"
+date: "409 Tier Building -- Feb. 7, 2020"
+output: 
+  html_document:
+    number_sections: true
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include = FALSE}
+library(knitr)
 library(tidyverse)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Optimizing/Tidying Data
+
+> Preliminaries - load the LIPP vowels data:
+
+```{r lipp data, message=FALSE}
+lipp <- read_csv("LIPP.csv")
 ```
 
 
+## Drop NA results from data
 
-```{r}
+> Check how many NAs exist by column
 
+```{r check NAs}
+# how many NA exist in each column
+na_columns <- colSums(is.na(lipp))
+na_columns
+
+# extract the list of names for each column
+na_column_list <- names(na_columns)
+na_column_list
 ```
 
+> Drop rows with NAs; compare sizes of dataframes
+
+```{r drop NAs}
+# select columns from list of names for quantitative data
+drop_columns <- c(na_column_list[10:13], na_column_list[19:28])
+drop_columns
+
+# remove rows from lipp dataframe if there is NA in "drop_column" list
+lipp_drop_na <- drop_na(lipp, drop_columns)
+ 
+# alternative: drop rows with any NAs
+lipp_zero_na <- drop_na(lipp)
+
+# create dataframe to compare sizes of original dataframe and after dropping NAs
+compare_na <- cbind( # cbind = bind columns together
+  # first column: count rows in each dataframe version
+  c(nrow(lipp), 
+    nrow(lipp_drop_na), 
+    nrow(lipp_zero_na)),
+  # second column: divide each count by count of original x100, round to 2 decimals
+  c(round(nrow(lipp)/nrow(lipp)*100, 2), 
+    round(nrow(lipp_drop_na)/nrow(lipp)*100, 2), 
+    round(nrow(lipp_zero_na)/nrow(lipp)*100, 2)
+    )
+  )
+
+# assign column and row names
+colnames(compare_na) <- c("Count", "Percent")
+rownames(compare_na) <- c("Original data", "Drop selected NAs", "Drop all NAs")
+
+compare_na
+```
+
+# Vowel plot types
+
+> Subset out some vowels for clarity, basic point plot
+
+```{r subset vowels}
+# select only lax vowels
+lipp_lax <- lipp %>% 
+  filter (vowel_type == "lax")
+
+# set up table of median F1, F2 values by vowel
+medians_lax <- lipp_lax %>%
+  group_by(vowel) %>% 
+  summarise(F2 = mean(F2), F1 = mean(F1))
+```
+
+```{r basic vowel plot}
+# basic point plot with reversed x, y axes and points coloured by vowel
+ggplot(lipp_lax,
+       aes(x = F2, y = F1, color = vowel)) + 
+  geom_point() +
+  scale_x_reverse() + 
+  scale_y_reverse() +
+  scale_colour_viridis_d()
+```
+
+> Aside: subplot of repeated elements across plots
+
+```{r subplot}
+# set up object containing list of common plot elements
+subplot <- list(scale_x_reverse(),
+                scale_y_reverse(),
+                scale_colour_viridis_d(option = "viridis"),
+                scale_fill_viridis_c(option = "magma"))
+```
+
+> Redo plot with ellipses to reduce impact of outliers on visual display
+
+```{r ellipse plot}
+# redo basic plot with ellipses replacing points, labels from median table
+ggplot(lipp_lax,
+       aes(x = F2, y = F1, color = vowel, label = vowel)) + 
+  stat_ellipse() +
+  geom_label(data = medians_lax) +
+  subplot
+```
+
+> Heatmap using 2d density plot
+
+```{r heatmap}
+# heatmap using stat_density_2d()
+ggplot(lipp,
+       aes(x = F2, y = F1, fill = stat(nlevel))) + 
+  stat_density_2d(geom = "polygon") +
+  subplot + 
+  # all vowels retained in data: facet_wrap() 
+  facet_wrap(~vowel)
+```
+
+# Normalization of vowel formant data
+
+**Normalization procedures rely heavily on Dr. M. Barlaz's workshop: https://marissabarlaz.github.io/portfolio/vowelnormalization/**
+
+> Natural log normalization
+
+```{r ellipses: natural log}
+# formants wrapped in log() function
+ggplot(lipp_lax,
+       aes(x = log(F2), y = log(F1), color = vowel, label = vowel)) + 
+  stat_ellipse() +
+  geom_label(data = medians_lax) +
+  subplot
+```
+
+> Log-10 normalization
+
+```{r ellipses: log-10}
+# formants wrapped in log10() function
+ggplot(lipp_lax,
+       aes(x = log10(F2), y = log10(F1), color = vowel, label = vowel)) + 
+  stat_ellipse() +
+  geom_label(data = medians_lax) +
+  subplot
+```
+
+> ERB (equivalent rectangular bandwidth) normalization
+
+```{r ellipses: ERB}
+# load/install phonR package
+require(phonR)
+
+# formants wrapped in normErb() function
+ggplot(lipp_lax,
+       aes(x = normErb(F2), y = normErb(F1), color = vowel, label = vowel)) + 
+  stat_ellipse() +
+  geom_label(data = medians_lax) +
+  subplot
+```
+
+> Bark normalization
+
+```{r ellipses: bark}
+# load/install phonR package
+require(phonR)
+
+# formants wrapped in normBark() function
+ggplot(lipp_lax,
+       aes(x = normBark(F2), y = normBark(F1), color = vowel, label = vowel)) + 
+  stat_ellipse() +
+  geom_label(data = medians_lax) +
+  subplot
+```
+
+> Mel normalization
+
+```{r ellipses: mel}
+# load/install phonR package
+require(phonR)
+
+# formants wrapped in normMel() function
+ggplot(lipp_lax,
+       aes(x = normMel(F2), y = normMel(F1), color = vowel, label = vowel)) + 
+  stat_ellipse() +
+  geom_label(data = medians_lax) +
+  subplot
+```
+
+> Z-score/Lobanov normalization
+
+This is a speaker-intrinsic method, so we need to run the function grouped by speaker, and regenerate medians table
+
+```{r ellipses: lobanov}
+# formants wrapped in scale() function, group by speaker
+z_lipp_lax <- lipp_lax %>% 
+         group_by(speaker_id) %>% 
+         mutate(F1_z = scale(F1), F2_z = scale(F2))
+
+# set up table of median F1, F2 values by vowel
+z_medians_lax <- z_lipp_lax %>%
+  group_by(vowel) %>% 
+  summarise(F2_z = mean(F2_z), F1_z = mean(F1_z))
+
+# plot using new dataframe & medians table
+ggplot(z_lipp_lax,
+       aes(x = F2_z, y = F1_z, color = vowel, label = vowel)) + 
+  stat_ellipse() +
+  geom_label(data = z_medians_lax) +
+  subplot
+```
+
+> Nearey1
+
+This is a speaker-intrinsic method, so we need to run the function grouped by speaker, and regenerate medians table
+
+```{r ellipses: nearey1}
+# load/install phonR package
+require(phonR)
+
+# set up new dataframe
+n1_lipp_lax <- with(lipp_lax, normNearey1(cbind(F1, F2), group = speaker_id))
+colnames(n1_lipp_lax) = c("F1_nearey1", "F2_nearey1")
+n1_lipp_lax = cbind(lipp_lax, n1_lipp_lax)
+
+# set up table of median F1, F2 values by vowel
+n1_medians_lax <- n1_lipp_lax %>%
+  group_by(vowel) %>% 
+  summarise(F2_nearey1 = mean(F2_nearey1), F1_nearey1 = mean(F1_nearey1))
+
+# plot using new dataframe & medians table
+ggplot(n1_lipp_lax,
+       aes(x = F2_nearey1, y = F1_nearey1, color = vowel, label = vowel)) + 
+  stat_ellipse() +
+  geom_label(data = n1_medians_lax) +
+  subplot
+```
+
+> Nearey2 and ANAE methods require F0-F3, but F0 not available in LIPP data
