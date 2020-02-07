@@ -1,13 +1,5 @@
 # Coding for Linguistics Discussion Group
 
-<img src="images/Rlogo.png" style="width:14%" align="left">
-
-<img src="images/PraatLogo.png" style="width:12%; margin-left: 25px" align="left">
-
-<img src="images/LaTeXlogo.png" style="width:30%; margin-left: 25px" align="left">
-
-<br><br><br><br><br><br>
-
 I'm pleased to be directing the **Coding for Linguistics Discussion Group** for the Linguistics Department at the University of Manitoba:
 
 * Meetings will be based around discussing various aspects of the use of code-based software such as R, Praat, and LaTeX in linguistic research
