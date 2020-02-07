@@ -69,7 +69,9 @@ rownames(compare_na) <- c("Original data", "Drop selected NAs", "Drop all NAs")
 compare_na
 ```
 
-# Vowel plot types
+# Vowel plots
+
+## Standard plots
 
 > Subset out some vowels for clarity, basic point plot
 
@@ -100,8 +102,9 @@ ggplot(lipp_lax,
 # set up object containing list of common plot elements
 subplot <- list(scale_x_reverse(),
                 scale_y_reverse(),
-                scale_colour_viridis_d(option = "viridis"),
-                scale_fill_viridis_c(option = "magma"))
+                # "end" specifies where the viridis scale approaches the yellow range
+                scale_colour_viridis_d(option = "viridis", end = 0.8),
+                scale_fill_viridis_d(option = "viridis", end = 0.8))
 ```
 
 > Redo plot with ellipses to reduce impact of outliers on visual display
@@ -109,13 +112,39 @@ subplot <- list(scale_x_reverse(),
 ```{r ellipse plot}
 # redo basic plot with ellipses replacing points, labels from median table
 ggplot(lipp_lax,
-       aes(x = F2, y = F1, color = vowel, label = vowel)) + 
+       aes(x = F2, y = F1, 
+           # fill applies to label backgrounds
+           # colour applies to text and ellipse colours
+           # label applies to text content
+           fill = vowel, colour = vowel, label = vowel)) + 
   stat_ellipse() +
-  geom_label(data = medians_lax) +
+  geom_label(data = medians_lax, 
+             # assign text colour so it stands out against fill colour
+             colour = "white") +
   subplot
 ```
 
-> Heatmap using 2d density plot
+> Smaller ellipses by changing stat level
+
+```{r smaller ellipses}
+# redo basic plot with ellipses replacing points, labels from median table
+ggplot(lipp_lax,
+       aes(x = F2, y = F1, 
+           # fill applies to label backgrounds
+           # colour applies to text and ellipse colours
+           # label applies to text content
+           fill = vowel, colour = vowel, label = vowel)) + 
+  # level = 0.68 covers about 1 standard deviation
+  stat_ellipse(level = 0.68) +
+  geom_label(data = medians_lax, 
+             # assign text colour so it stands out against fill colour
+             colour = "white") +
+  subplot
+```
+
+## Heatmap
+
+> Using 2d density plot
 
 ```{r heatmap}
 # heatmap using stat_density_2d()
@@ -123,8 +152,23 @@ ggplot(lipp_drop_na,
        aes(x = F2, y = F1, fill = stat(nlevel))) + 
   stat_density_2d(geom = "polygon") +
   subplot + 
+  # change fill scale to continuous for heatmap levels
+  scale_fill_viridis_c() +
   # all vowels retained in data: facet_wrap() 
   facet_wrap(~vowel)
+```
+
+> Heatmap of one vowel in different phonetic contexts, e.g. by place of articulation of following consonant
+
+```{r heatmap by place}
+# heatmap using stat_density_2d()
+ggplot(lipp_drop_na %>% filter (vowel == "AE"),
+       aes(x = F2, y = F1, fill = stat(nlevel))) + 
+  stat_density_2d(geom = "polygon") +
+  subplot + 
+  scale_fill_viridis_c() +
+  # all vowels retained in data: facet_wrap() 
+  facet_wrap(~fol_place)
 ```
 
 # Normalization of vowel formant data
@@ -136,9 +180,10 @@ ggplot(lipp_drop_na,
 ```{r ellipses: natural log}
 # formants wrapped in log() function
 ggplot(lipp_lax,
-       aes(x = log(F2), y = log(F1), color = vowel, label = vowel)) + 
+       aes(x = log(F2), y = log(F1), 
+           fill = vowel, colour = vowel, label = vowel)) + 
   stat_ellipse() +
-  geom_label(data = medians_lax) +
+  geom_label(data = medians_lax, colour = "white") +
   subplot
 ```
 
@@ -147,9 +192,10 @@ ggplot(lipp_lax,
 ```{r ellipses: log-10}
 # formants wrapped in log10() function
 ggplot(lipp_lax,
-       aes(x = log10(F2), y = log10(F1), color = vowel, label = vowel)) + 
+       aes(x = log10(F2), y = log10(F1), 
+           fill = vowel, colour = vowel, label = vowel)) + 
   stat_ellipse() +
-  geom_label(data = medians_lax) +
+  geom_label(data = medians_lax, colour = "white") +
   subplot
 ```
 
@@ -161,9 +207,10 @@ require(phonR)
 
 # formants wrapped in normErb() function
 ggplot(lipp_lax,
-       aes(x = normErb(F2), y = normErb(F1), color = vowel, label = vowel)) + 
+       aes(x = normErb(F2), y = normErb(F1), 
+           fill = vowel, colour = vowel, label = vowel)) + 
   stat_ellipse() +
-  geom_label(data = medians_lax) +
+  geom_label(data = medians_lax, colour = "white") +
   subplot
 ```
 
@@ -175,9 +222,10 @@ require(phonR)
 
 # formants wrapped in normBark() function
 ggplot(lipp_lax,
-       aes(x = normBark(F2), y = normBark(F1), color = vowel, label = vowel)) + 
+       aes(x = normBark(F2), y = normBark(F1), 
+           fill = vowel, colour = vowel, label = vowel)) + 
   stat_ellipse() +
-  geom_label(data = medians_lax) +
+  geom_label(data = medians_lax, colour = "white") +
   subplot
 ```
 
@@ -189,9 +237,10 @@ require(phonR)
 
 # formants wrapped in normMel() function
 ggplot(lipp_lax,
-       aes(x = normMel(F2), y = normMel(F1), color = vowel, label = vowel)) + 
+       aes(x = normMel(F2), y = normMel(F1), 
+           fill = vowel, colour = vowel, label = vowel)) + 
   stat_ellipse() +
-  geom_label(data = medians_lax) +
+  geom_label(data = medians_lax, colour = "white") +
   subplot
 ```
 
@@ -212,9 +261,10 @@ z_medians_lax <- z_lipp_lax %>%
 
 # plot using new dataframe & medians table
 ggplot(z_lipp_lax,
-       aes(x = F2_z, y = F1_z, color = vowel, label = vowel)) + 
+       aes(x = F2_z, y = F1_z, 
+           fill = vowel, colour = vowel, label = vowel)) + 
   stat_ellipse() +
-  geom_label(data = z_medians_lax) +
+  geom_label(data = z_medians_lax, colour = "white") +
   subplot
 ```
 
@@ -238,15 +288,16 @@ n1_medians_lax <- n1_lipp_lax %>%
 
 # plot using new dataframe & medians table
 ggplot(n1_lipp_lax,
-       aes(x = F2_nearey1, y = F1_nearey1, color = vowel, label = vowel)) + 
+       aes(x = F2_nearey1, y = F1_nearey1, 
+           fill = vowel, colour = vowel, label = vowel)) + 
   stat_ellipse() +
-  geom_label(data = n1_medians_lax) +
+  geom_label(data = n1_medians_lax, colour = "white") +
   subplot
 ```
 
 # Formant trajectories
 
-```{r trajectories}
+```{r trajectories setup}
 # use diphthongs - more dynamic movement
 diphthongs <- lipp_drop_na %>% 
   filter (vowel_type == "diphthong") %>% 
@@ -267,7 +318,9 @@ F2 <- diphthongs %>%
   select(F2)
 
 diphthong_times <- cbind(F1, F2)               
+```
 
+```{r F1 trajectories}
 # plot of F1 trajectories
 ggplot(diphthong_times,
        aes(x = time, y = F1, colour = vowel)) +
@@ -275,7 +328,9 @@ ggplot(diphthong_times,
               # gam formula needs k=5 because FAVE only provides 5 timepoints
               formula = y ~ s(x, k = 5)) + 
   scale_color_viridis_d()
+```
 
+```{r F2 trajectories}
 # plot of F2 trajectories
 ggplot(diphthong_times,
        aes(x = time, y = F2, colour = vowel)) +
@@ -283,35 +338,64 @@ ggplot(diphthong_times,
               # gam formula needs k=5 because FAVE only provides 5 timepoints
               formula = y ~ s(x, k = 5)) + 
   scale_color_viridis_d()
+```
 
-# and for fun we can facet_wrap on voice of the following segment
+```{r F1 and F2 trajectories}
+# plot both formants in one plot using two smooths
 ggplot(diphthong_times,
-       aes(x = time, y = F1, colour = vowel)) +
-  geom_smooth(method = "gam",
-              formula = y ~ s(x, k = 5)) + 
+       # no global y assignment
+       aes(x = time, colour = vowel)) +
+  geom_smooth(method = "gam", formula = y ~ s(x, k = 5),
+              # assign F1 to y in first smooth
+              aes(y = F1)) + 
+  geom_smooth(method = "gam", formula = y ~ s(x, k = 5),
+              # assign F2 to y in second smooth
+              aes(y = F2)) +
   scale_color_viridis_d() +
+  ylab("Formants (Hz)")
+```
+
+```{r F1 and F2 trajectories rescale}
+# log scale improves balance between F1/F2 ranges
+ggplot(diphthong_times,
+       aes(x = time, colour = vowel)) +
+  geom_smooth(method = "gam", formula = y ~ s(x, k = 5),
+              aes(y = F1)) + 
+  geom_smooth(method = "gam", formula = y ~ s(x, k = 5),
+              aes(y = F2)) +
+  scale_color_viridis_d() +
+  scale_y_log10() +
+  ylab("Formants log(Hz)") 
+```
+
+```{r trajectories by following voice}
+# facet_wrap by voice of the following segment
+ggplot(diphthong_times,
+       aes(x = time, colour = vowel)) +
+  geom_smooth(method = "gam", formula = y ~ s(x, k = 5),
+              aes(y = F1)) + 
+  geom_smooth(method = "gam", formula = y ~ s(x, k = 5),
+              aes(y = F2)) +
+  scale_color_viridis_d() +
+  scale_y_log10() +
+  ylab("Formants log(Hz)")  +
   facet_wrap(~fol_voice)
+```
 
+```{r alternate faceting}
+# change aes(colour) and facet_wrap assignments
 ggplot(diphthong_times,
-       aes(x = time, y = F2, colour = vowel)) +
-  geom_smooth(method = "gam",
-              formula = y ~ s(x, k = 5)) + 
+       aes(x = time, 
+           #assign colour to voice
+           colour = fol_voice)) +
+  geom_smooth(method = "gam", formula = y ~ s(x, k = 5),
+              aes(y = F1)) + 
+  geom_smooth(method = "gam", formula = y ~ s(x, k = 5),
+              aes(y = F2)) +
   scale_color_viridis_d() +
-  facet_wrap(~fol_voice)
-
-# or switch vowel/fol_voice
-ggplot(diphthong_times,
-       aes(x = time, y = F1, colour = fol_voice)) +
-  geom_smooth(method = "gam",
-              formula = y ~ s(x, k = 5)) + 
-  scale_color_viridis_d() +
-  facet_wrap(~vowel)
-
-ggplot(diphthong_times,
-       aes(x = time, y = F2, colour = fol_voice)) +
-  geom_smooth(method = "gam",
-              formula = y ~ s(x, k = 5)) + 
-  scale_color_viridis_d() +
+  scale_y_log10() +
+  ylab("Formants log(Hz)")  +
+  # facet by vowel
   facet_wrap(~vowel)
 ```
 
