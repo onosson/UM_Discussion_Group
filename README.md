@@ -15,6 +15,8 @@ Friday, **February 7th** | 10:30--12:30 | 409 Tier
 Monday, **March 2nd** | 12:30--2:30 | 409 Tier
 Monday, **April 6th** | 12:30--2:30 | 409 Tier
 
+Please **clone or download** this repository on the morning before our meetings, and you will have any updates which we may be discussing - I tend to make changes very late, so the morning of the meeting itself is the best time to do so!
+
 ---
 
 # Agenda: March 2
