@@ -83,3 +83,5 @@ Below are sets of resources on a variety of coding and related topics which you 
 * Statistics Canada: https://www12.statcan.gc.ca/census-recensement/index-eng.cfm
 * QGIS "Create, edit, visualise, analyse and publish geospatial information": https://qgis.org/en/site/
 * Brandon Foltz (general statistics etc.): https://www.youtube.com/user/BCFoltz/playlists
+
+<img src="images/ice.jpg">
