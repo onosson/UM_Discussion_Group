@@ -3,8 +3,9 @@ title: "Coding Discussion Group"
 author: "Coordinator: Sky Onosson"
 date: "409 Tier Building -- Feb. 7, 2020"
 output: 
-  html_document:
-    number_sections: true
+  html_document: 
+    number_sections: yes
+    toc: yes
 ---
 
 ```{r setup, include = FALSE}
