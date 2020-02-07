@@ -43,17 +43,17 @@ Below are sets of resources on a variety of coding and related topics which you 
 
 ## Software
 
-* R: <https://muug.ca/mirror/cran/
-* RStudio: <https://rstudio.com/products/rstudio/download/
-* Praat: <http://www.fon.hum.uva.nl/praat
-* LaTeX: <https://www.latex-project.org/get/
+* R: <https://muug.ca/mirror/cran/>
+* RStudio: <https://rstudio.com/products/rstudio/download/>
+* Praat: <http://www.fon.hum.uva.nl/praat>
+* LaTeX: <https://www.latex-project.org/get/>
 
 ---
 
 ## Books (online) & pdfs
 
 * RStudio CheatSheets: <https://rstudio.com/resources/cheatsheets/>
-* R for Data Science: <https://r4ds.had.co.nz/> <br> Source code: https://github.com/hadley/r4ds>
+* R for Data Science: <https://r4ds.had.co.nz/> <br> Source code: <https://github.com/hadley/r4ds>
 * Hands-On Programming with R: <https://rstudio-education.github.io/hopr/>
 * Data Skills for Reproducible Science: <https://psyteachr.github.io/msc-data-skills/>
 * Data wrangling, exploration, and analysis with R: <https://stat545.com/index.html> <br> Source code: <https://github.com/rstudio-education/stat545>
