@@ -1,9 +1,9 @@
 # Coding for Linguistics Discussion Group
 
-I'm pleased to be directing the **Coding for Linguistics Discussion Group** for the Linguistics Department at the University of Manitoba:
+Welcome to the home of the **Coding for Linguistics Discussion Group** at the Linguistics Department of the University of Manitoba:
 
 * Meetings will be based around discussing various aspects of the use of code-based software such as R, Praat, and LaTeX in linguistic research
-* To join our mailing list please email me at <sky@onosson.com>
+* To join our mailing list please send an email to: <sky@onosson.com>
 
 ---
 
