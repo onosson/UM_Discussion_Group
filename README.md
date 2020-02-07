@@ -1,9 +1,7 @@
-<p align="center">
-
 # Coding for Linguistics Discussion Group
 
+<p align="center">
 <img src="images/R.png" align="left"> <img src="images/LaTeX.png"> <img src="images/Praat.png" align="right">
-
 </p>
 
 Welcome to the home of the **Coding for Linguistics Discussion Group** at the Linguistics Department of the University of Manitoba:
