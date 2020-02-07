@@ -1,5 +1,7 @@
 # Coding for Linguistics Discussion Group
 
+<img src="images/LaTeXthickLogo.png" style="width:35%; border:8px solid; margin-right: 25px">
+
 Welcome to the home of the **Coding for Linguistics Discussion Group** at the Linguistics Department of the University of Manitoba:
 
 * Meetings will be based around discussing various aspects of the use of code-based software such as R, Praat, and LaTeX in linguistic research
