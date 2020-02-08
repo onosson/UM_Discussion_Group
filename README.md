@@ -7,7 +7,7 @@
 Welcome to the home of the **Coding for Linguistics Discussion Group** at the Linguistics Department of the University of Manitoba:
 
 * Meetings will be based around discussing various aspects of the use of code-based software such as R, Praat, and LaTeX in linguistic research
-* To join our mailing list please send an email to: <sky@onosson.com>
+* To join our mailing list so that you are notified of upcoming meeting dates and agendas, please send an email to: <sky@onosson.com>
 
 ---
 
@@ -15,9 +15,11 @@ Welcome to the home of the **Coding for Linguistics Discussion Group** at the Li
 
 Date | Time | Location
 -|-|-
-Friday, **February 7th** | 10:30--12:30 | 409 Tier
-Monday, **March 2nd** | 12:30--2:30 | 409 Tier
-Monday, **April 6th** | 12:30--2:30 | 409 Tier
+Friday, **February 7th** | 10:30–12:30 | 409 Tier
+Monday, **March 2nd** | 12:30–2:30 | 409 Tier
+Monday, **April 6th** | 12:30–2:30 | 409 Tier
+May | TBA | TBA
+June | TBA | TBA
 
 Please **clone or download** this repository on the morning before our meetings, and you will have any updates which we may be discussing - I tend to make changes very late, so the morning of the meeting itself is the best time to do so!
 
