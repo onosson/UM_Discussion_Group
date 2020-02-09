@@ -20,6 +20,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r lipp data, message=FALSE}
 lipp <- read_csv("LIPP.csv")
+# add unique identifier for each token (necesarry for pivoting later)
+lipp$token_id <- 1:nrow(lipp)
 ```
 
 
@@ -298,32 +300,23 @@ ggplot(n1_lipp_lax,
 
 # Formant trajectories
 
-```{r trajectories setup}
+```{r trajectories setup - revision}
 # use diphthongs - more dynamic movement
 diphthongs <- lipp_drop_na %>% 
   filter (vowel_type == "diphthong") %>% 
-  select(-F1, -F2, -F3) # remove non-timepoint formant measurements
-
-# pivot_longer() separates out time measurement columns into individual rows
-F1 <- diphthongs %>% 
-  pivot_longer(cols = F1_20:F1_80, 
-               names_to = c(".value", "time"), 
-               names_pattern = "(..)_(..)",
-               names_ptypes = list(time = integer())) %>% 
-  select(-F2_20, -F2_35, -F2_50, -F2_65, -F2_80)
-
-# for some reason, I was unable to use pivot_wider() to properly separate out F1, F2 measures after using pivot_longer - to compensate, I use a "hack" of just compiling the F2 values into a single column, and then re-attaching this column to the other data
-F2 <- diphthongs %>% 
-  pivot_longer(cols = F2_20:F2_80, 
-               values_to = "F2") %>% 
-  select(F2)
-
-diphthong_times <- cbind(F1, F2)               
+  # remove non-timepoint formant measurements
+  select(-F1, -F2, -F3) %>%  
+  # pivot formant measurements into individual rows
+  pivot_longer(cols = F1_20:F2_80) %>% 
+  # formants and timepointso to separate columns, numeric converted
+  separate(name, into = c("formant", "time"), convert = TRUE) %>% 
+  # F1, F2 rows aggregated per token/timepoint
+  pivot_wider(names_from = formant, values_from = value)
 ```
 
 ```{r F1 trajectories}
 # plot of F1 trajectories
-ggplot(diphthong_times,
+ggplot(diphthongs,
        aes(x = time, y = F1, colour = vowel)) +
   geom_smooth(method = "gam",
               # gam formula needs k=5 because FAVE only provides 5 timepoints
