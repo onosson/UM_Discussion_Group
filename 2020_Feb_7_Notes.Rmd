@@ -326,7 +326,7 @@ ggplot(diphthongs,
 
 ```{r F2 trajectories}
 # plot of F2 trajectories
-ggplot(diphthong_times,
+ggplot(diphthongs,
        aes(x = time, y = F2, colour = vowel)) +
   geom_smooth(method = "gam",
               # gam formula needs k=5 because FAVE only provides 5 timepoints
@@ -336,7 +336,7 @@ ggplot(diphthong_times,
 
 ```{r F1 and F2 trajectories}
 # plot both formants in one plot using two smooths
-ggplot(diphthong_times,
+ggplot(diphthongs,
        # no global y assignment
        aes(x = time, colour = vowel)) +
   geom_smooth(method = "gam", formula = y ~ s(x, k = 5),
@@ -351,7 +351,7 @@ ggplot(diphthong_times,
 
 ```{r F1 and F2 trajectories rescale}
 # log scale improves balance between F1/F2 ranges
-ggplot(diphthong_times,
+ggplot(diphthongs,
        aes(x = time, colour = vowel)) +
   geom_smooth(method = "gam", formula = y ~ s(x, k = 5),
               aes(y = F1)) + 
@@ -364,7 +364,7 @@ ggplot(diphthong_times,
 
 ```{r trajectories by following voice}
 # facet_wrap by voice of the following segment
-ggplot(diphthong_times,
+ggplot(diphthongs,
        aes(x = time, colour = vowel)) +
   geom_smooth(method = "gam", formula = y ~ s(x, k = 5),
               aes(y = F1)) + 
@@ -378,7 +378,7 @@ ggplot(diphthong_times,
 
 ```{r alternate faceting}
 # change aes(colour) and facet_wrap assignments
-ggplot(diphthong_times,
+ggplot(diphthongs,
        aes(x = time, 
            #assign colour to voice
            colour = fol_voice)) +
