@@ -1,0 +1,88 @@
+---
+title: "Coding Discussion Group"
+author: "Coordinator: Sky Onosson"
+date: "409 Tier Building -- March 2, 2020"
+output: 
+  html_document: 
+    number_sections: yes
+    toc: yes
+---
+
+```{r setup, include = FALSE}
+library(knitr)
+library(tidyverse)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# How to make a personal academic website{-}
+
+# The single-page version
+
+*Simple, easy to manage...*
+
+## GitHub Pages
+
+* This is where your page will be hosted
+* https://pages.github.com/
+
+## GitHub
+
+* This is where the source for your page will be hosted
+* https://github.com/
+* Once you have an account, you can manage other code repositories on GitHub
+
+## Steps to make a GitHub Page
+
+1. create an account (free version) at https://github.com/
+1. verify your account (check your email)
+1. create a new repository 
+    * make sure the name is identical with your username
+    * be sure to check the box to initialize the repository with a README
+    ```{r, echo=FALSE}
+    include_graphics("images/newreponame.png")
+    ```
+1. edit the README by clicking the pencil icon
+    ```{r, echo=FALSE}
+    include_graphics("images/edit1.png")
+    ```
+1. enter the information you want on your page
+    * all (?) Markdown code elements are valid
+    * you can preview the file as you work
+    ```{r, echo=FALSE}
+    include_graphics("images/edit2.png")
+    ```
+1. commit changes when you are done - this updates the file
+    ```{r, echo=FALSE}
+    include_graphics("images/commit.png")
+    ```
+1. go to the repository's settings
+    ```{r, echo=FALSE}
+    include_graphics("images/settings.png")
+    ```
+1. scroll down to the GitHub Pages section
+    * change the Source to the **master branch**
+    ```{r, echo=FALSE}
+    include_graphics("images/master.png")
+    ```
+    * click the button to Choose a Theme for your page (this can be changed at any time)
+    ```{r, echo=FALSE}
+    include_graphics("images/theme.png")
+    ```
+    * select your theme from the choices available
+    ```{r, echo=FALSE}
+    include_graphics("images/select.png")
+    ```
+1. scroll down to the GitHub Pages section again to find the link to your GitHub Page
+    * the link will always be: http://USERNAME.github.io/USERNAME/
+    ```{r, echo=FALSE}
+    include_graphics("images/link.png")
+    include_graphics("images/page.png")
+    ```
+
+That's it! You can use any R Markdown code in your page, *and* edit it directly in your browser at any time via the README.md file
+
+
+
+# The multi-page version
+
+*Complex, flexible, management involves more coding*
