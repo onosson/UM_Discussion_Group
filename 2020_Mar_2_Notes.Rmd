@@ -147,3 +147,107 @@ serve_site("blogdown/test_site")
 * Joe Fruehwald's site: https://jofrhwld.github.io/
 * At the risk of being self-serving, my own site: http://onosson.com
 * ... ?
+
+# Using version control with GitHub and RStudio
+
+Version control is a separate issue from website-building, but it can be used within RStudio linked with a GitHub account to manage your site on your computer. This allows for more complex sites with folders containing documents, e.g. pdf copies of your papers.
+
+## Getting Git
+
+Git for can be downloaded at: https://git-scm.com/downloads
+
+```{r, echo=FALSE}
+include_graphics("images/git.png")
+```
+
+## Setting up RStudio for Git
+
+After installing Git, you need to open RStudio's Global Options (on Mac: `Cmd+,`) go to the `Git/SVN` tab and check off `Enable version control interface for RStudio projects`
+
+## Linking to a preexisting GitHub repository in RStudio
+
+Since we created a new site on GitHub at the beginning of this workshop, you can use that repository as your first version control project.
+
+In RStudio go to `File > New Project` and create a Version Control project...
+
+```{r, echo=FALSE}
+include_graphics("images/newproject.png")
+```
+
+... select Git as the source ...
+
+```{r, echo=FALSE}
+include_graphics("images/versioncontrol.png")
+```
+
+... and provide the URL to your repository, the name of the project, and where you want it stored on your computer.
+
+```{r, echo=FALSE}
+include_graphics("images/gitclone.png")
+```
+
+## Working with GitHub in RStudio
+
+You can make whatever changes you want within the local copy of the repository on your computer inside RStudio, by editing the .rmd files etc. You can even make changes in the folder itself, by creating sub-folders, adding files such as images or pdfs, etc. All of these changes in your "local version" of the repository will be tracked by Git and compared with the "master version" stored on GitHub. If you click on the `Git` tab on the right in RStudio, you will see any changes you have made which are different and newer than GitHub's version.
+
+```{r, echo=FALSE}
+include_graphics("images/versionchanges.png")
+```
+
+If you are satisfied with your changes, you need to update GitHub's copy. This has two main parts with multiple steps:
+
+1. "Pull" to make sure you have the most recent version. I recommend always doing this, even if you're sure you have the most recent version. Just click the "Pull" button in the Git tab.
+
+```{r, echo=FALSE}
+include_graphics("images/pull.png")
+```
+
+You should get a response that your version is "Already up to date."
+
+```{r, echo=FALSE}
+include_graphics("images/pull2.png")
+```
+
+2. "Commit" your changes. Click the "Commit" button in the Git tab, 
+
+```{r, echo=FALSE}
+include_graphics("images/commit2.png")
+```
+
+This will bring up a list of any files you have added or modified after originally downloading the repisotory.
+
+```{r, echo=FALSE}
+include_graphics("images/commit3.png")
+```
+
+Check off the box next to every file you want to update. This is your opportunity to make sure that all the change you made are ones you want to keep, or discard. For some files, you may get a warning that the `diff` is "extremely large". This is usually not a problem, but just indicates that the update may take longer than usual while the file uploads.
+
+```{r, echo=FALSE}
+include_graphics("images/commit4.png")
+```
+
+Enter a "commit message" - this will appear next to the edited files on GitHub as an indication of what changes were made when they were modified. Then click the `Push` button to send your changes to GitHub.
+
+```{r, echo=FALSE}
+include_graphics("images/commit5.png")
+```
+
+You should get an "Everything up-to-date" message if all went well. I always do one more `Pull` at this point just to make sure that both my local and the master versions are in sync.
+
+```{r, echo=FALSE}
+include_graphics("images/commit6.png")
+```
+
+That's it!
+
+
+
+
+
+
+
+
+
+
+
+
