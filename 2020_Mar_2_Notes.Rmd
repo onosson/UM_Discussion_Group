@@ -240,11 +240,87 @@ include_graphics("images/commit6.png")
 
 That's it!
 
+# Markdown code elements
 
+Here are some of the most common Markdown code elements you might use for your site. There are many references on the internet for other coding features, e.g.
 
+* https://rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf
+* https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf
+* https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+* https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf
+* https://en.support.wordpress.com/markdown-quick-reference/
+* etc.
 
+## Headers
 
+Multiple levels of headers created with # (`#` = main heading, `##` = first sub-heading, etc.), numbering is managed automatically
 
+* `# This will become a main-level heading`
+* `### This will become a third-level sub-heading`
+
+## Lists
+
+* Bullet lists (like this one) are created with a `*` or `-` or `+` followed by a space at the beginning of a line before each item
+  * To make bullet list sub-items (like this one), simply put a tab *before* the bullet marker
+    * To use multiple levels, just add more tabs
+
+1. Numbered lists (like this one) are created by starting the line with `1. `
+1. To continue the list, start each line with `1.` and numbering will be managed automatically---this allows you to insert missing information between existing items without having to renumber the list
+
+For both types of lists, make sure you leave a blank line both before and after the list, but don't put blank lines between list items
+
+## Font style
+Italics and boldface are created by surrounding the text with a single * (for italics) or two ** (for boldface) with no intervening space
+
+* `*This will be in italics*`
+* *This will be in italics*
+* `**This will be in bold**`
+* **This will be in bold**
+
+To display R/Markdown code without running it, surround the text with back-ticks (usually above the Tab key)
+
+* `Code entered in this way **will not run**`
+* Code entered in this way **will not run**
+
+## Links
+
+Both site-internal links and links to the rest of the internet can be created in two ways:
+
+1. Enter the plain url, which will become a link
+* `http://google.com`
+* http://google.com
+2. Put the link text inside square brackets, followed by the url in parentheses, with no space in between
+* `[Google](http://google.com)`
+* [Google](http://google.com)
+
+If you want your links to open in a new tab, add `{target="_blank"}` immediately after the url parentheses
+
+* `[Google in a new tab](http://google.com){target="_blank"}`
+* [Google in a new tab](http://google.com){target="_blank"}
+
+## Tables
+
+Tables have three main elements, which must be entered with no blank lines between them
+
+1. Headers, using this format: `Header 1 | Header 2 | Header 3`
+1. On the line after the headers, indicate the columns: `-|-|-` (3 columns)
+1. Last, line-by-line items: `Item 1 | Item 2 | Item 3`
+
+Header 1 | Header 2 | Header 3
+-|-|- 
+Item 1 | Item 2 | Item 3
+
+Table column spacing is managed automatically based on page width
+
+## Images
+
+Images can be entered in two ways:
+
+* Basic version (with little position control) which will appear in-line wherever it is used: `![](images/R.png)` ![](images/R.png)
+* The more complex style allows you to control relative size (as percent of page width), alignment, spacing, and add borders: `<img src="images/R.png"`
+`style="width:35%; border:8px solid;` 
+`margin-right: 25px" align="right">`
+<img src="images/R.png" style="width:35%; border:8px solid; margin-right: 25px" align="right">
 
 
 
