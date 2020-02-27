@@ -30,11 +30,19 @@ knitr::opts_chunk$set(echo = TRUE)
 * Personal info and interests
 * ... ?
 
-## Examples of sites to emulate
+## Examples of sites to emulate?
+
+What qualifies as a good site is at least partly subjective. While I am by no means a graphic or web designer, I think some qualities that make a personal academic site objectively good might include:
+
+* Being easy to navigate
+* Not being too cluttered/visually overwhelming
+
+Here are some examples of personal academic websites that I find notable for various reasons, and which might provide you with some ideas:
 
 * Joey Stanley's site: http://joeystanley.com/
 * Marissa Barlaz's site (apparently created in blogdown): https://marissabarlaz.github.io/ 
 * Joe Fruehwald's site: https://jofrhwld.github.io/
+* Hadley Wickham's site: http://hadley.nz/
 * At the risk of being self-serving, my own site: http://onosson.com
 * ... ?
 
@@ -221,6 +229,10 @@ You can create a site by building invidividual pages as Markdown files within RS
 * you can synchronize your site directly with RStudio's version control feature which can be linked to GitHub (somewhat complex to set up but easy to maintain), or you can manually upload the site and update files as you go (easy to start, maintenance is potentially errorprone)
 * you register your own domain name and have it linked to GitHub Pages, so that people access your site using your domain, but everything is hosted on GitHub
 * my site was created this way---originally on another server, which I moved over to GitHub last year
+
+
+
+
 
 ## Blogdown
 

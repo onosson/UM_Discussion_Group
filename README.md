@@ -13,25 +13,25 @@ Welcome to the home of the **Coding for Linguistics Discussion Group** at the Li
 
 # Agenda: March 2
 
-For March 2nd we will be looking at *how to build a website in R Markdown*. I'm planning to show you how to use <https://pages.github.com/> where your site can be hosted for free, so it would be helpful if everyone can set up a GitHub account beforehand just to get that out of the way---you can go to <http://github.com> and easily create an account.
-
-As an alternative to cloning/downloading the repository, you can view the html version of the March 2 discussion at: https://htmlpreview.github.io/?https://github.com/onosson/UM_Discussion_Group/blob/master/2020_Mar_2_Notes.html
-
-* This may take a minute or two to load the first time---if you just see a blank page, wait a moment and it should appear
+For March 2nd we will be looking at *how to build a website in R Markdown*. I'm planning to show you how to use <https://pages.github.com/> where your site can be hosted for free, so it would be helpful if everyone can set up a GitHub account beforehand just to get that out of the way - you can go to <http://github.com> and easily create an account.
 
 ---
 
 # Schedule
 
-Date | Time | Location
--|-|-
-Friday, **February 7th** | 10:30–12:30 | 409 Tier
-Monday, **March 2nd** | 12:30–2:30 | 409 Tier
-Monday, **April 6th** | 12:30–2:30 | 409 Tier
-May | TBA | TBA
-June | TBA | TBA
+Date | Topic | Notes | Time | Location
+-|-|-|-|-
+Friday, **Feb. 7th** | Vowel plotting & normalization | [Feb. 7 Notes](https://htmlpreview.github.io/?https://github.com/onosson/UM_Discussion_Group/blob/master/2020_Feb_7_Notes.html) | 10:30–12:30 | 409 Tier
+Monday, **Mar. 2nd** | Building a website | [Mar. 2 Notes](https://htmlpreview.github.io/?https://github.com/onosson/UM_Discussion_Group/blob/master/2020_Mar_2_Notes.html) | 12:30–2:30 | 409 Tier
+Monday, **Apr. 6th** | TBA | | 12:30–2:30 | 409 Tier
+May | TBA |  | TBA | TBA
+June | TBA |  | TBA | TBA
 
 Please **clone or download** this repository on the morning before our meetings, and you will have any updates which we may be discussing - I tend to make changes very late, so the morning of the meeting itself is the best time to do so!
+
+As an alternative to cloning/downloading the repository, you can view the html versions of each day's notes by clicking in the links in the Schedule above
+
+* these pages may take a minute or two to load the first time - if you just see a blank page, wait a moment and it should appear
 
 ---
 
