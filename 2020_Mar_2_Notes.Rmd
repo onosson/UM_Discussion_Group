@@ -359,6 +359,12 @@ output:
 1. You can register your own domain name and have it linked to GitHub Pages, so that people access your site using your domain, but everything is hosted on GitHub
     * once you have registered your site, you can provide the domain name to GitHub by going to the repository's settings
     * my own site was created this way---originally on another server, which I moved over to GitHub last year
+1. You can also host documents (e.g. pdfs, Word docs, etc.) on your site:
+    * create a sub-folder within your site's main folder on your computer
+    * put whatever documents you want inside that folder
+    * keep all names as short and simple as possible, avoiding special characters
+    * link to the documents on your site's pages using: `doc_folder_name/doc_name.extension`
+    * commit and push changes to GitHub, and the documents will be live!
 
 ## Blogdown
 
