@@ -11,6 +11,16 @@ Welcome to the home of the **Coding for Linguistics Discussion Group** at the Li
 
 ---
 
+# Agenda: March 2
+
+For March 2nd we will be looking at *how to build a website in R Markdown*. I'm planning to show you how to use <https://pages.github.com/> where your site can be hosted for free, so it would be helpful if everyone can set up a GitHub account beforehand just to get that out of the way---you can go to <http://github.com> and easily create an account.
+
+As an alternative to cloning/downloading the repository, you can view the html version of the March 2 discussion at: https://htmlpreview.github.io/?https://github.com/onosson/UM_Discussion_Group/blob/master/2020_Mar_2_Notes.html
+
+* This may take a minute or two to load the first time---if you just see a blank page, wait a moment and it should appear
+
+---
+
 # Schedule
 
 Date | Time | Location
@@ -22,14 +32,6 @@ May | TBA | TBA
 June | TBA | TBA
 
 Please **clone or download** this repository on the morning before our meetings, and you will have any updates which we may be discussing - I tend to make changes very late, so the morning of the meeting itself is the best time to do so!
-
----
-
-# Agenda: March 2
-
-For March 2nd we will be looking at building a website in R Markdown. I'm planning to show you how to use <https://pages.github.com/> where your site can be hosted for free, so it would be helpful if everyone can set up a GitHub account beforehand just to get that out of the way - just go to <http://github.com> and create an account.
-
-Alternatively, you can view the html version of the March 2 discussion at: https://htmlpreview.github.io/?https://github.com/onosson/UM_Discussion_Group/blob/master/2020_Mar_2_Notes.html
 
 ---
 
