@@ -30,7 +30,7 @@ knitr::opts_chunk$set(echo = TRUE)
 * Personal info and interests
 * ... ?
 
-## Examples of sites to emulate?
+## Examples of sites to emulate
 
 What qualifies as a good site is at least partly subjective. While I am by no means a graphic or web designer, I think some qualities that make a personal academic site objectively good might include:
 
@@ -332,6 +332,10 @@ This method is most similar to coding directly in html, which is the only websit
     ```{r, echo=FALSE}
     include_graphics("images/newrmd3.png")
     ```
+    * You can also use the `Build Website` button in the `Build` tab to knit all of the pages for the full site
+    ```{r, echo=FALSE}
+    include_graphics("images/build.png")
+    ```
 1. After you have created your various sub-pages, create a new R Script file, and save it as `_site.yml`
     ```{r, echo=FALSE}
     include_graphics("images/newyml.png")
@@ -365,6 +369,8 @@ output:
     * keep all names as short and simple as possible, avoiding special characters
     * link to the documents on your site's pages using: `doc_folder_name/doc_name.extension`
     * commit and push changes to GitHub, and the documents will be live!
+
+>  For a similar protocol for generating sites in Markdown that doesn't necessarily assume hosting on GitHub, see: https://garrettgman.github.io/rmarkdown/rmarkdown_websites.html
 
 ## Blogdown
 
