@@ -39,10 +39,10 @@ June | TBA |  | TBA | TBA
 There are two wasy to get the notes and other materials for each meeting:
 
 1. **Clone or download** this repository (<https://github.com/onosson/UM_Discussion_Group>) on the morning before our meetings -- I tend to make changes very late, so the morning of the meeting itself is the best time to do so!
-    a. click on the `Clone or download` button near the top of the repository page
-    a. download the repository as a .zip file
-    a. unzip it on your computer to the location of your choosing
-    a. open the **UM_Discussion_Group.Rproj** file
+    * click on the `Clone or download` button near the top of the repository page
+    * download the repository as a .zip file
+    * unzip it on your computer to the location of your choosing
+    * open the **UM_Discussion_Group.Rproj** file
 1. Alternatively, you can view each day's notes as a webpage via the links in the **Notes** column in the **Schedule** above -- depending on the topic, it may be easier to simply follow along that way, rather than working with the code directly
     * the Notes pages may take a minute or two to load the first time - if you just see a blank page in your browser, wait a moment and it should appear
 
