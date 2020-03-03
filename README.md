@@ -11,13 +11,14 @@ Welcome to the home of the **Coding for Linguistics Discussion Group** at the Li
 
 ---
 
-# Agenda, April 6:
+# Upcoming meeting on April 6th
 
-This meeting will focus on a number of smaller topics involving R coding. Selection of topics is currently preliminary, but may include:
+This meeting will focus on a number of advance and/or focused topics involving R. Selection of topics is currently preliminary, but may tentatively include:
 
+* good practice in managing your projects, including R scripts etc.
 * writing custom functions
-* good practice in managing your scripts and projects
-* TBA
+* reporting statistical results
+* etc.
 
 ---
 
@@ -27,20 +28,23 @@ Date | Topic | Notes | Time | Location
 -|-|-|-|-
 Friday, **Feb. 7th** | Vowel plotting & normalization | [Feb. 7 Notes](https://htmlpreview.github.io/?https://github.com/onosson/UM_Discussion_Group/blob/master/2020_Feb_7_Notes.html) | 10:30–12:30 | 409 Tier
 Monday, **Mar. 2nd** | Building a website | [Mar. 2 Notes](https://htmlpreview.github.io/?https://github.com/onosson/UM_Discussion_Group/blob/master/2020_Mar_2_Notes.html) | 12:30–2:30 | 409 Tier
-Monday, **Apr. 6th** | TBA | | 12:30–2:30 | 409 Tier
+Monday, **Apr. 6th** | Advanced topics in R (preliminary) | Notes TBA | 12:30–2:30 | 409 Tier
 May | TBA |  | TBA | TBA
 June | TBA |  | TBA | TBA
 
-Please **clone or download** this repository (<https://github.com/onosson/UM_Discussion_Group>) on the morning before our meetings - I tend to make changes very late, so the morning of the meeting itself is the best time to do so!
+---
 
-1. click on the `Clone or download` button above
-1. download the repository as a .zip file
-1. unzip it on your computer to the location of your choosing
-1. open the **UM_Discussion_Group.Rproj** file
+# Meeting agendas and notes
 
-As an alternative to cloning/downloading the repository, you can view the html versions of each day's notes by clicking in the links in the Schedule above - depending on the topic, it may be easier to simply follow along that way, rather than working with the code directly
+There are two wasy to get the notes and other materials for each meeting:
 
-* the Notes pages may take a minute or two to load the first time - if you just see a blank page in your browser, wait a moment and it should appear
+1. **Clone or download** this repository (<https://github.com/onosson/UM_Discussion_Group>) on the morning before our meetings -- I tend to make changes very late, so the morning of the meeting itself is the best time to do so!
+    a. click on the `Clone or download` button near the top of the repository page
+    a. download the repository as a .zip file
+    a. unzip it on your computer to the location of your choosing
+    a. open the **UM_Discussion_Group.Rproj** file
+1. Alternatively, you can view each day's notes as a webpage via the links in the **Notes** column in the **Schedule** above -- depending on the topic, it may be easier to simply follow along that way, rather than working with the code directly
+    * the Notes pages may take a minute or two to load the first time - if you just see a blank page in your browser, wait a moment and it should appear
 
 ---
 

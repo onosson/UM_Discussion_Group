@@ -1,0 +1,113 @@
+---
+title: "Advanced topics in R"
+author: "Sky Onosson, Coding Discussion Group coordinator"
+date: "April 6, 2020"
+output: 
+  html_document: 
+    theme: yeti
+    highlight: pygments
+    number_sections: yes
+    toc: yes
+---
+
+```{r setup, include=F}
+library(knitr)
+library(tidyverse)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Project management
+
+## Naming conventions
+
+In dealing with projects on your computer, you will have to provide names to a variety of items:
+
+* folders
+* files
+* variables
+* etc.
+
+For projects which can have a long shelf-life, i.e. that you will be working with over weeks or months while also dealing with other projects, it is essential to develop good naming practices. While a short, abbreviated name might make sense and be perfectly clear in the moment, when you come back to it after some time and/or after working on something else, you might not recall why you chose that particular name or what it means.
+
+When it comes to choosing a good name for a digital object, I feel that there are two large principles or constraints at work, both of which are important but which may come into conflict with each other. These are **brevity** and **clarity**. Name selection usually involves finding a good balance between these.
+
+### Brevity
+
+Simply put, **brevity** involves choosing short names, which can minimally be as short as one character such as `a` or `x`. I would include most abbreviations in the category of short names, as well. 
+
+Short names have a number of advantages:
+
+* faster to type
+* easy to select and remember in the moment
+* stand out from text composed of longer strings
+
+When creating project files, code variables, etc. it is often convenient to use short names at first, for the above reasons. For short-term projects, the use of short names may not cause any difficulties, and the advantages listed above are good reasons to use them in the right contexts.
+But in longer timeframes, short names can cause a lot of problems due to their opaque quality.
+
+### Clarity
+
+**Clarity** in naming means that names are clear, which I attribute to (at least) two factors:
+
+1. they are easily **decomposable**
+1. they are **meaningful**
+
+**Decomposability** means that you can easily recognize what the parts of a name are. Abbreviations fall under "short names" because they aren't easy to decompose -- you might know the full form of S.C.U.B.A. but its not very decomposable as the word *scuba*.
+
+**Meaningfulness** is whether you can get meaning out of a name. Abbreviations are not very meaningful in their abbreviated form, but neither are names such as "CoursePaperFinalDraft". While there is some meaning, a file with this name is not easily distinguished from other similar files.
+
+Names with good **clarity** will utilize both of these elements. A name such as "University_of_Manitoba_Masters_CourseName_Final_Term_Paper_v3" is both easily decomposable and highly meaningful. However, it obviously runs counter to the principle of **brevity**.
+
+### Compromise in naming
+
+The best names strike a middle ground, in that they are both brief and clear. What this means in practice depends entirely on context. For folders which contain projects, I find it most useful to use the hierarchical structure of the filesystem to build in decomposability and meaning, while keeping the folder and file names more brief. Subfolders are your friend!
+
+```{r, eval=F}
+Thesis/
+
+  Data/
+
+    Original_Files/
+      File_A.wav
+      File_B.wav
+
+    Annotated_Files/
+      File_A_annotated.textgrid
+      File_B_annotated.textgrid
+  
+  R_Scripts/
+    Stats.R
+
+  Documents/
+    Thesis_v1
+    Thesis_v2
+
+===============================
+
+Course_A/
+
+  Notes/
+    Sep_10.doc
+    Sep_12.doc
+
+  Papers/
+    Term_paper1_v1.doc
+
+===============================
+
+Course_B/
+
+etc...
+```
+
+When it comes to variable names in code, you don't have the same options. One advantage that you will have within a lot of editors like RStudio is the autocomplete functionality, so that you very often don't need to fully type out longer names.
+
+
+
+
+
+
+# Custom R code
+
+## Custom functions
+
+## Custom packages
