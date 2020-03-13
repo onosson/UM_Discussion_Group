@@ -1,7 +1,7 @@
 ---
-title: "Advanced topics in R"
+title: "Project Management and Other Topics"
 author: "Sky Onosson, Coding Discussion Group coordinator"
-date: "April 6, 2020"
+date: "May, 2020"
 output: 
   html_document: 
     theme: yeti
@@ -16,9 +16,7 @@ library(tidyverse)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Project management
-
-## Naming conventions
+# Naming
 
 In dealing with projects on your computer, you will have to provide names to a variety of items:
 
@@ -31,7 +29,7 @@ For projects which can have a long shelf-life, i.e. that you will be working wit
 
 When it comes to choosing a good name for a digital object, I feel that there are two large principles or constraints at work, both of which are important but which may come into conflict with each other. These are **brevity** and **clarity**. Name selection usually involves finding a good balance between these.
 
-### Brevity
+## Brevity
 
 Simply put, **brevity** involves choosing short names, which can minimally be as short as one character such as `a` or `x`. I would include most abbreviations in the category of short names, as well. 
 
@@ -44,7 +42,7 @@ Short names have a number of advantages:
 When creating project files, code variables, etc. it is often convenient to use short names at first, for the above reasons. For short-term projects, the use of short names may not cause any difficulties, and the advantages listed above are good reasons to use them in the right contexts.
 But in longer timeframes, short names can cause a lot of problems due to their opaque quality.
 
-### Clarity
+## Clarity
 
 **Clarity** in naming means that names are clear, which I attribute to (at least) two factors:
 
@@ -57,7 +55,7 @@ But in longer timeframes, short names can cause a lot of problems due to their o
 
 Names with good **clarity** will utilize both of these elements. A name such as "University_of_Manitoba_Masters_CourseName_Final_Term_Paper_v3" is both easily decomposable and highly meaningful. However, it obviously runs counter to the principle of **brevity**.
 
-### Compromise in naming
+## Compromise in naming
 
 The best names strike a middle ground, in that they are both brief and clear. What this means in practice depends entirely on context. For folders which contain projects, I find it most useful to use the hierarchical structure of the filesystem to build in decomposability and meaning, while keeping the folder and file names more brief. Subfolders are your friend!
 
@@ -99,15 +97,59 @@ Course_B/
 etc...
 ```
 
-When it comes to variable names in code, you don't have the same options. One advantage that you will have within a lot of editors like RStudio is the autocomplete functionality, so that you very often don't need to fully type out longer names.
+When it comes to variable names in code, you are not working within a filesystem, so your options are different.
+One advantage with a lot of editors like RStudio is their autocomplete functionality, so that you very often don't need to fully type out longer names.
+As a personal preference, I usually deal with variable names in two categories:
+
+1. Names that will be only used in a restricted part of my code, and which are fairly easy to interpret within that context. For example, I might be running a for-loop in a section of code which takes a series of files, one after the other, and performs some operation, such as reading them into memory. In these cases, I will very often favour **brevity** over **clarity**, and might use a one-letter variable name. Often within a for-loop, the loop variable will be used to select items from a vector or list which you have already established, going through the list one item after another as the sequence progresses.
+```{r, eval=F}
+file_list <- c("file1.csv", "file2.csv")
+
+for (f in 1:2) {read.csv(file_list[f])}
+```
+2. In most other cases, I favour variable names composed of simple descriptive words, usually not more than two in length, separated by an underscore. Other common separators include a period, or the use of capitalization on the first letter of each word: `like_this`, `or.this`, `OrThis`. Two words is usually a good choice, becuase it offers increased **clarity** as well as reducing the chances that you might select a name which is already being used for some R function.
+
+## Other considerations
+
+If you have a series of similar variables, it's always wise to provide them with similar names. If you're using two-word names, you might use a common element in either the leftmost or rightmost name. The only real significance here is how these items will appear alphabetically in the R Environment tab, where your objects in memory are listed. By putting the common element in the variable names first, these objects will be listed together in the Environment, which may be advantageous (I usually find it helpful).
+```{r, eval=F}
+female_F1 <- c(...)
+male_F1 <- c(...)
+
+Or:
+
+F1_female <- c(...)
+F1_male <- c(...)
+```
+These considerations usually don't seem very important when you start writing your code, as you may only be dealing with a handful of variables and objects, which you can keep and easily differentiate in your own memory quite easily. However, you may find that as you develop a particular piece of code and it grows in size, you can quickly reach a threshold beyond which you find it difficult to easily remember what all your variables refer to, or what their function is within the code.
+
+Another good habit is to annotate your code, and this especially applies to variable names -- *even when they seem totally transparent*.
+```{r, eval=F}
+# this vector is a list of all the female F1 values
+F1_female <- c(...)
+```
+Thorough annotation is probably the most important thing you can do when it comes to variable names, whether they are named `male_pitch_Hz` or `z`. If your annotations are explicit and detailed, this can go a long way towards discounting the need for both brevity and clarity, even though these are always important naming considerations.
+
+# Common code elements
+
+As I work on projects over time, I find that I tend to reproduce some of the same elements over and over in my R scripts. These can include:
+
+* loading commonly-used packages, e.g. `tidyverse`
+* setting your Working Directory
+
+There are a couple solutions to this. The simplest is to put such elements at the very beginning of your scripts, and copy-paste them into new scripts as a sort of template. Alternatively, you could make a new copy of an old script, open it, and just delete everything below the common code elements you want to retain. I've done it both ways, and they involve about the same amount of work.
+```{r, eval=F}
+library(tidyverse)
+
+setwd("~/UserDocuments/RProjects/ThisProject")
+```
 
 
 
 
-
-
-# Custom R code
 
 ## Custom functions
+
+NOTE: add examples from usage in loops
 
 ## Custom packages

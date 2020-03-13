@@ -26,11 +26,11 @@ This meeting will focus on a number of advance and/or focused topics involving R
 
 Date | Topic | Notes | Time | Location
 -|-|-|-|-
-Friday, **Feb. 7th** | Vowel plotting & normalization | [Feb. 7 Notes](https://htmlpreview.github.io/?https://github.com/onosson/UM_Discussion_Group/blob/master/2020_Feb_7_Notes.html) | 10:30–12:30 | 409 Tier
-Monday, **Mar. 2nd** | Building a website | [Mar. 2 Notes](https://htmlpreview.github.io/?https://github.com/onosson/UM_Discussion_Group/blob/master/2020_Mar_2_Notes.html) | 12:30–2:30 | 409 Tier
-Monday, **Apr. 6th** | Advanced topics in R (preliminary) | Notes TBA | 12:30–2:30 | 409 Tier
-May | TBA |  | TBA | TBA
-June | TBA |  | TBA | TBA
+**Feb. 7th** | Vowel plotting & normalization | [Feb. 7 Notes](https://htmlpreview.github.io/?https://github.com/onosson/UM_Discussion_Group/blob/master/2020_Feb_7_Notes.html) | 10:30–12:30 | 409 Tier
+**Mar. 2nd** | Building a website | [Mar. 2 Notes](https://htmlpreview.github.io/?https://github.com/onosson/UM_Discussion_Group/blob/master/2020_Mar_2_Notes.html) | 12:30–2:30 | 409 Tier
+**Apr. 6th** | *Cancelled* | --- | --- | ---
+**May** (date TBA) | Advanced topics in R (preliminary) | Notes TBA | TBA | TBA
+**June** | TBA |  | TBA | TBA
 
 ---
 
