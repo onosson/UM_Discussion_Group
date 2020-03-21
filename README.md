@@ -11,7 +11,13 @@ Welcome to the home of the **Coding for Linguistics Discussion Group** at the Li
 
 ---
 
-# Upcoming meeting on April 6th
+# Update: COVID-19 and UM closure
+
+As the UM will be unavailable to us for the foreseeable future, and as we are all keeping our "social distance", there will be no in-person meetings for some time unfortunately. Keep posted for future updates.
+
+---
+
+# Next meeting (TBA)
 
 This meeting will focus on a number of advance and/or focused topics involving R. Selection of topics is currently preliminary, but may tentatively include:
 
@@ -28,9 +34,7 @@ Date | Topic | Notes | Time | Location
 -|-|-|-|-
 **Feb. 7th** | Vowel plotting & normalization | [Feb. 7 Notes](https://htmlpreview.github.io/?https://github.com/onosson/UM_Discussion_Group/blob/master/2020_Feb_7_Notes.html) | 10:30–12:30 | 409 Tier
 **Mar. 2nd** | Building a website | [Mar. 2 Notes](https://htmlpreview.github.io/?https://github.com/onosson/UM_Discussion_Group/blob/master/2020_Mar_2_Notes.html) | 12:30–2:30 | 409 Tier
-**Apr. 6th** | *Cancelled* | --- | --- | ---
-**May** (date TBA) | Advanced topics in R (preliminary) | Notes TBA | TBA | TBA
-**June** | TBA |  | TBA | TBA
+**Future dates TBA** | Advanced topics in R (preliminary) | TBA | TBA | TBA
 
 ---
 
